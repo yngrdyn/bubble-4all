@@ -8,22 +8,9 @@ const production = !process.env.ROLLUP_WATCH;
 
 export default [
 	{
-		input: 'dist/src/index.js',
-		output: {
-			file: 'dist/bundle.js',
-			format: 'iife', // immediately-invoked function expression — suitable for <script> tags
-			sourcemap: true
-		},
-		plugins: [
-			resolve(), // tells Rollup how to find date-fns in node_modules
-			commonjs(), // converts date-fns to ES modules
-			production && terser() // minify, but only in production
-		]
-	},
-	{
 		input: 'dist/src/bubble-4all.js',
 		output: {
-			file: 'dist/bundle-wc.js',
+			file: 'dist/bundle.js',
 			format: 'iife', // immediately-invoked function expression — suitable for <script> tags
 			sourcemap: true
 		},
