@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <style>
+    body {
+      background: #fafafa;
+    }
+  </style>
+</head>
+<body>
+  <div id="demo"></div>
+
+  <script type="module">
+    import { html, render } from 'lit';
+    import '../dist/src/bubble-4all.js';
+
+    const header = 'Hello owc World!';
+    render(
+      html`
+        <bubble-4all .header=${header}>
+          <div style="padding: 1.6rem 0.8rem 0.8rem">
+            <p style="margin-top: 32px">Some light dom</p>  
+          </div>
+        </bubble-4all>
+      `,
+      document.querySelector('#demo')
+    );
+  </script>
+</body>
+</html>

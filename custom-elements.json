@@ -1,0 +1,221 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/Bubble4all.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Bubble4all",
+          "members": [
+            {
+              "kind": "field",
+              "name": "ariaLabelOpen",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "ariaLabelOpen"
+            },
+            {
+              "kind": "field",
+              "name": "ariaLabelClose",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "ariaLabelClose"
+            },
+            {
+              "kind": "field",
+              "name": "icon",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "icon"
+            },
+            {
+              "kind": "field",
+              "name": "iconHovered",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "iconHovered"
+            },
+            {
+              "kind": "field",
+              "name": "_isOpen",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "__toggle"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "ariaLabelOpen",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "ariaLabelOpen"
+            },
+            {
+              "name": "ariaLabelClose",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "ariaLabelClose"
+            },
+            {
+              "name": "icon",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "icon"
+            },
+            {
+              "name": "iconHovered",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "iconHovered"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "bubble-4all",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Bubble4all",
+          "declaration": {
+            "name": "Bubble4all",
+            "module": "src/Bubble4all.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/bubble-4all.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "bubble-4all",
+          "declaration": {
+            "name": "Bubble4all",
+            "module": "/src/Bubble4all.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Bubble4all",
+          "declaration": {
+            "name": "Bubble4all",
+            "module": "./Bubble4all.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "stories/index.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Regular"
+        },
+        {
+          "kind": "variable",
+          "name": "CustomHeader"
+        },
+        {
+          "kind": "variable",
+          "name": "CustomCounter"
+        },
+        {
+          "kind": "variable",
+          "name": "SlottedContent"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "stories/index.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Regular",
+          "declaration": {
+            "name": "Regular",
+            "module": "stories/index.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomHeader",
+          "declaration": {
+            "name": "CustomHeader",
+            "module": "stories/index.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomCounter",
+          "declaration": {
+            "name": "CustomCounter",
+            "module": "stories/index.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SlottedContent",
+          "declaration": {
+            "name": "SlottedContent",
+            "module": "stories/index.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/block-navigation.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/prettify.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "coverage/lcov-report/sorter.js",
+      "declarations": [],
+      "exports": []
+    }
+  ]
+}
