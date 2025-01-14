@@ -52,10 +52,11 @@ export class Bubble4all extends LitElement {
       flex-direction: column;
       min-width: 0px;
       box-shadow: rgba(0, 0, 0, 0.05) 0px 0.48px 2.41px -0.38px, rgba(0, 0, 0, 0.17) 0px 4px 20px -0.75px;
-      overflow: auto;
+      overflow: hidden;
       isolation: isolate;
       border-radius: 16px;
       background: rgb(248, 248, 248);
+      position: relative;
     }
 
     :host div.bubble-4all-container-actions {
@@ -64,6 +65,8 @@ export class Bubble4all extends LitElement {
       justify-content: flex-end;
       align-items: center;
       padding: 0.8em;
+      position: absolute;
+      top: 0;
     }
 
     :host div.bubble-4all-container-actions button {
@@ -85,7 +88,6 @@ export class Bubble4all extends LitElement {
 
     ::slotted(div) {
       max-width: 100%;
-      margin-top: calc(0px - 32px - 0.8rem - 0.8rem);
     }
   `;
 
