@@ -60,13 +60,13 @@ export class Bubble4all extends LitElement {
     }
 
     :host div.bubble-4all-container-actions {
-      width: 100%;
       display: flex;
       justify-content: flex-end;
       align-items: center;
       padding: 0.8em;
       position: absolute;
       top: 0;
+      right: 0;
     }
 
     :host div.bubble-4all-container-actions button {

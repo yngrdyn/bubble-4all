@@ -57,6 +57,10 @@
     "tslib": "^2.6.3",
     "typescript": "^5.5.3"
   },
+  "resolutions": {
+    "wrap-ansi": "7.0.0",
+    "string-width": "4.1.0"
+  },
   "customElements": "custom-elements.json",
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
