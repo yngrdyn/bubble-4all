@@ -35,6 +35,11 @@ export class Bubble4all extends LitElement {
       background-position: center center;
       cursor: pointer;
       background-blend-mode: hard-light;
+      animation-duration: 2000ms;
+      transform-origin: center bottom;
+      animation-iteration-count: 5;
+      animation-name: bounce;
+      
     }
 
     :host button.bubble-4all-trigger:hover {
@@ -89,18 +94,52 @@ export class Bubble4all extends LitElement {
     ::slotted(div) {
       max-width: 100%;
     }
+
+    @keyframes bounce {
+  from,
+  20%,
+  53%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -16px, 0) scaleY(1.05);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -8px, 0) scaleY(1.001);
+  }
+
+  80% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0) scaleY(1);
+  }
+
+  90% {
+    transform: translate3d(0, -2px, 0) scaleY(1.02);
+  }
+}
   `;
 
   @property() ariaLabelOpen?: string;
   @property() ariaLabelClose?: string;
   @property() icon?: string;
   @property() iconHovered?: string;
+  @property() bounce?: boolean;
+  @property() bgColor?: string;
 
   @state()
   private _isOpen = false;
+  private _hasBeenOpened = false;
 
   __toggle() {
     this._isOpen = !this._isOpen;
+    this._hasBeenOpened = true;
   }
 
   render() {
@@ -115,7 +154,7 @@ export class Bubble4all extends LitElement {
             <slot></slot>
           </div>`
       : html`
-          <button @click=${this.__toggle} aria-label=${this.ariaLabelOpen ?? "Open bubble"} class="bubble-4all-trigger" style=${this.icon ? `--bg: url('${this.icon}'); --bg_hovered: url('${this.iconHovered ?? this.icon}')` : `--bg: url('data:image/png;base64,${logoBase64}'); --bg_hovered: url('data:image/png;base64,${logoBase64Hovered}')`}>
+          <button @click=${this.__toggle} aria-label=${this.ariaLabelOpen ?? "Open bubble"} class="bubble-4all-trigger" style=${this.icon ? `--bg: url('${this.icon}'); --bg_hovered: url('${this.iconHovered ?? this.icon}')` : `--bg: url('data:image/png;base64,${logoBase64}'); --bg_hovered: url('data:image/png;base64,${logoBase64Hovered}'); animation-iteration-count: ${this._hasBeenOpened || !this.bounce ? 0 : 5}; ${this.bgColor ? `background-color: ${this.bgColor}` : ''}`}>
           </button>
         `;
   }

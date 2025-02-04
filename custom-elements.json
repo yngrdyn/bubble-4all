@@ -45,7 +45,32 @@
             },
             {
               "kind": "field",
+              "name": "bounce",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "attribute": "bounce"
+            },
+            {
+              "kind": "field",
+              "name": "bgColor",
+              "type": {
+                "text": "string | undefined"
+              },
+              "attribute": "bgColor"
+            },
+            {
+              "kind": "field",
               "name": "_isOpen",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "_hasBeenOpened",
               "type": {
                 "text": "boolean"
               },
@@ -85,6 +110,20 @@
                 "text": "string | undefined"
               },
               "fieldName": "iconHovered"
+            },
+            {
+              "name": "bounce",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "fieldName": "bounce"
+            },
+            {
+              "name": "bgColor",
+              "type": {
+                "text": "string | undefined"
+              },
+              "fieldName": "bgColor"
             }
           ],
           "superclass": {
