@@ -18,6 +18,18 @@ yarn
 <bubble-4all></bubble-4all>
 ```
 
+### Properties
+All bubble properties are optional
+
+| Property  | Default Value | Description |
+| ------------- | ------------- | ----------|
+| ariaLabelOpen | "Open bubble" | Used for a11 |
+| ariaLabelClose | "Close bubble" | Used for a11 |
+| bgColor | "#0059E1" | Bubble background color |
+| icon | Chat icon | Icon inside the bubble |
+| iconHovered | Chat icon variation | Icon inside the bubble when hovered |
+| bounce | false | Determines whether the bubble bounces or not |
+
 ## Linting and formatting
 
 To scan the project for linting and formatting errors, run
