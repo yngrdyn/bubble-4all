@@ -70,36 +70,55 @@
             },
             {
               "kind": "field",
-              "name": "_hasBeenOpened",
+              "name": "_ariaLabel",
               "type": {
-                "text": "boolean"
+                "text": "string"
               },
               "privacy": "private",
-              "default": "false"
-            },
-            {
-              "kind": "field",
-              "name": "_ariaLabel",
-              "privacy": "private"
+              "default": "''"
             },
             {
               "kind": "field",
               "name": "_backgroundVariables",
-              "privacy": "private"
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
             },
             {
               "kind": "field",
               "name": "_backgroundColor",
-              "privacy": "private"
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
             },
             {
               "kind": "field",
               "name": "_animationIterationCount",
-              "privacy": "private"
+              "type": {
+                "text": "string | number"
+              },
+              "privacy": "private",
+              "default": "0"
             },
             {
               "kind": "method",
               "name": "__toggle"
+            },
+            {
+              "kind": "method",
+              "name": "__startBounce"
+            },
+            {
+              "kind": "method",
+              "name": "__stopBounce"
+            },
+            {
+              "kind": "method",
+              "name": "__handleBounce"
             },
             {
               "kind": "method",

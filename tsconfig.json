@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
     "target": "es2021",
-    "module": "es2022",
-    "moduleResolution": "bundler",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "noEmitOnError": true,
     "lib": ["es2021", "dom", "DOM.Iterable"],
     "strict": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
+    "useDefineForClassFields": false,
     "importHelpers": true,
     "outDir": "dist",
     "sourceMap": true,
@@ -18,5 +19,5 @@
     "incremental": true,
     "skipLibCheck": true,
   },
-  "incude": ["./src/**/*.ts"]
+  "include": ["**/*.ts"]
 }

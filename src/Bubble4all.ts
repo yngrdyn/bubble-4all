@@ -1,6 +1,6 @@
 import { css, html, LitElement, } from 'lit';
 import { property, state } from 'lit/decorators.js';
-import { logoBase64, logoBase64Hovered } from './logo';
+import { logoBase64, logoBase64Hovered } from './logo.js';
 
 export class Bubble4all extends LitElement {
   static styles = css`
@@ -34,7 +34,7 @@ export class Bubble4all extends LitElement {
       background-blend-mode: hard-light;
       animation-duration: 2000ms;
       transform-origin: center bottom;
-      animation-iteration-count: 5;
+      animation-iteration-count: infinite;
       animation-name: bounce;
       
     }
@@ -134,27 +134,54 @@ export class Bubble4all extends LitElement {
   @property() bounce?: boolean;
   @property() bgColor?: string;
 
-  @state()
-  private _isOpen = false;
-  private _hasBeenOpened = false;
-  private _ariaLabel = this._isOpen
-    ? this.ariaLabelClose ?? "Close bubble"
-    : this.ariaLabelOpen ?? "Open bubble";
-  private _backgroundVariables = this.icon
-    ? `--bg: url('${this.icon}'); --bg_hovered: url('${this.iconHovered ?? this.icon}')`
-    : `--bg: url('data:image/png;base64,${logoBase64}'); --bg_hovered: url('data:image/png;base64,${logoBase64Hovered}');`;
-  private _backgroundColor = this.bgColor ?? '';
-  private _animationIterationCount = this._hasBeenOpened || !this.bounce ? 0 : 5;
+  @state() private _isOpen = false;
+  @state() private _ariaLabel = '';
+  @state() private _backgroundVariables = '';
+  @state() private _backgroundColor = '';
+  @state() private _animationIterationCount: string | number = 0;
 
   __toggle() {
     this._isOpen = !this._isOpen;
-    this._hasBeenOpened = true;
+  }
+
+  __startBounce() {
+    this._animationIterationCount = 'infinite'
+    setTimeout(() => {
+      this._animationIterationCount = 0
+    }, 10000)
+  }
+
+  __stopBounce() {
+    this._animationIterationCount = 0
+  }
+
+  __handleBounce() {
+    if (this._animationIterationCount !== 0) {
+      this.__stopBounce()
+    } else {
+      this.__startBounce()
+    }
   }
 
   __onOutsideDocClick(event: any) {
     if (this._isOpen && !event.composedPath().includes(this)) {
-      this.__toggle();
+      this._isOpen = false;
     }
+  }
+
+  firstUpdated() {
+    this._backgroundVariables = this.icon
+      ? `--bg: url('${this.icon}'); --bg_hovered: url('${this.iconHovered ?? this.icon}')`
+      : `--bg: url('data:image/png;base64,${logoBase64}'); --bg_hovered: url('data:image/png;base64,${logoBase64Hovered}');`;
+    this._backgroundColor = this.bgColor ?? '';
+    if (this.bounce) {
+      this.__startBounce()
+    }
+    setInterval(() => {
+      if(!this._isOpen) {
+        this.__handleBounce();
+      }
+    }, 120000);
   }
 
   connectedCallback() {
