@@ -46,7 +46,7 @@ export class Bubble4all extends LitElement {
     :host div.bubble-4all-container {
       width: calc(100vw - 0.5rem - 0.5rem);
       min-width: 100%;
-      max-width: max(392px, 25vw);
+      max-width: max(392px, 30vw);
       height: calc(100vh - 1rem - 1rem);
       min-height: 100%;
       max-height: 714px;
