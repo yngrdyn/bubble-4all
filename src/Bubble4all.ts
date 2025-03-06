@@ -1,6 +1,6 @@
 import { css, html, LitElement, } from 'lit';
 import { property, state } from 'lit/decorators.js';
-import { logoBase64, logoBase64Hovered } from './logo.ts';
+import { logoBase64, logoBase64Hovered } from './logo';
 
 export class Bubble4all extends LitElement {
   static styles = css`
@@ -122,6 +122,11 @@ export class Bubble4all extends LitElement {
 }
   `;
 
+  constructor() {
+    super();
+    this.__onOutsideDocClick = this.__onOutsideDocClick.bind(this);
+  }
+
   @property() ariaLabelOpen?: string;
   @property() ariaLabelClose?: string;
   @property() icon?: string;
@@ -144,6 +149,22 @@ export class Bubble4all extends LitElement {
   __toggle() {
     this._isOpen = !this._isOpen;
     this._hasBeenOpened = true;
+  }
+
+  __onOutsideDocClick(event: any) {
+    if (this._isOpen && !event.composedPath().includes(this)) {
+      this.__toggle();
+    }
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    document.addEventListener('click', this.__onOutsideDocClick);
+  }
+
+  disconnectedCallback() {
+    document.removeEventListener('click', this.__onOutsideDocClick);
+    super.disconnectedCallback();
   }
 
   render() {

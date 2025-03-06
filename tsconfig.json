@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "es2021",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "es2022",
+    "moduleResolution": "bundler",
     "noEmitOnError": true,
     "lib": ["es2021", "dom", "DOM.Iterable"],
     "strict": true,
@@ -17,8 +17,6 @@
     "declaration": true,
     "incremental": true,
     "skipLibCheck": true,
-    "noEmit": true,
-    "allowImportingTsExtensions": true,
   },
-  "include": ["**/*.ts"]
+  "incude": ["./src/**/*.ts"]
 }
