@@ -141,6 +141,10 @@ export class Bubble4all extends LitElement {
   @state() private _animationIterationCount: string | number = 0;
 
   __toggle() {
+    if (!this._isOpen) {
+      this.__stopBounce()
+    }
+
     this._isOpen = !this._isOpen;
   }
 
